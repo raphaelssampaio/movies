@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Image, Text, Button } from 'react-native-elements'
+import { isIphoneX } from 'react-native-iphone-x-helper'
 
 import { colors } from '../../styles'
 import { SEE_MORE } from '../../constants'
@@ -54,8 +55,8 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   photo: {
-    width: 180,
-    height: 180,
+    height: isIphoneX() ? 180 : 160,
+    width: isIphoneX() ? 180 : 160,
     borderRadius: 10,
     marginHorizontal: 5,
   },

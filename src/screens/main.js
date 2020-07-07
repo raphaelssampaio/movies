@@ -1,6 +1,5 @@
-// Initializing.js
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import { colors } from '../styles'
 import Card from '../components/Card'
 
@@ -15,7 +14,6 @@ export default class Main extends React.Component {
   render() {
     return (
       <View style={styles.default}>
-        <Text style={styles.welcome}>Welcome to Movies</Text>
         <View style={styles.container}>
           <Card title={TWENTY_TWENTY} picture={twentyTwenty} />
           <Card title={TWENTY_TEN} picture={twentyTen} />
