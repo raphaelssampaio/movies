@@ -4,8 +4,14 @@ import { MAIN } from './constants'
 export const goToMain = () =>
   Navigation.setRoot({
     root: {
-      component: {
-        name: MAIN,
+      stack: {
+        children: [
+          {
+            component: {
+              name: MAIN,
+            },
+          },
+        ],
       },
     },
   })
