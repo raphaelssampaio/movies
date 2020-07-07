@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native'
 import { Image, Text, Button } from 'react-native-elements'
 
 import { colors } from '../../styles'
+import { SEE_MORE } from '../../constants'
 
 export default function Card({ title, picture }) {
   return (
@@ -11,7 +12,7 @@ export default function Card({ title, picture }) {
         <Text style={styles.titleStyle}>{title}</Text>
         <Image style={styles.photo} resizeMode="cover" source={picture} />
         <Button
-          title="See More"
+          title={SEE_MORE}
           titleStyle={styles.buttonTitleStyle}
           buttonStyle={styles.buttonStyle}
         />

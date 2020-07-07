@@ -4,10 +4,8 @@ import { View, Text, StyleSheet } from 'react-native'
 import { colors } from '../styles'
 import Card from '../components/Card'
 
-import doisMileVinte from '../assets/doisMileVinte.jpg'
-import doisMil from '../assets/doisMil.jpg'
-import doisMileDez from '../assets/doisMileDez.jpg'
-import allTime from '../assets/allTime.jpeg'
+import { twentyTwenty, twentyTen, twoThousand, allTime } from '../assets'
+import { TWENTY_TWENTY, TWENTY_TEN, TWO_THOUSAND, ALL_TIME } from '../constants'
 
 export default class Main extends React.Component {
   constructor() {
@@ -16,22 +14,15 @@ export default class Main extends React.Component {
 
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: colors.background,
-          paddingTop: 64,
-          paddingHorizontal: 16,
-        }}
-      >
+      <View style={styles.default}>
         <Text style={styles.welcome}>Welcome to Movies</Text>
         <View style={styles.container}>
-          <Card title="2020 Top 10" picture={doisMileVinte} />
-          <Card title="2010 Top 10" picture={doisMileDez} />
+          <Card title={TWENTY_TWENTY} picture={twentyTwenty} />
+          <Card title={TWENTY_TEN} picture={twentyTen} />
         </View>
         <View style={styles.container}>
-          <Card title="2000 Top 10" picture={doisMil} />
-          <Card title="All time top 10" picture={allTime} />
+          <Card title={TWO_THOUSAND} picture={twoThousand} />
+          <Card title={ALL_TIME} picture={allTime} />
         </View>
       </View>
     )
@@ -39,6 +30,12 @@ export default class Main extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  default: {
+    flex: 1,
+    backgroundColor: colors.background,
+    paddingTop: 64,
+    paddingHorizontal: 16,
+  },
   welcome: {
     fontSize: 28,
     color: colors.white,

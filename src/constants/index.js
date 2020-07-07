@@ -1,0 +1,5 @@
+export const SEE_MORE = 'See More'
+export const TWENTY_TWENTY = '2020 Top 10'
+export const TWENTY_TEN = '2010 Top 10'
+export const TWO_THOUSAND = '2000 Top 10'
+export const ALL_TIME = 'All Time Top 10'
