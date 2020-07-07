@@ -5,6 +5,7 @@ export default {
   mainBlue: '#5cdff0',
   darkBlue: '#13bdd3',
   background: '#2b2a32',
+  cardBackground: '#242329',
 
   lightGrey: '#F3F3F3',
   grey: '#D8D8D8',
