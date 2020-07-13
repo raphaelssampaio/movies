@@ -4,7 +4,7 @@ import { Text } from 'react-native-elements'
 
 import MovieList from '../components/Movies/movieList'
 import { Navigation } from 'react-native-navigation'
-import { MOVIES, SIDE_MENU } from '../constants'
+import { SIDE_MENU } from '../constants'
 import { colors } from '../styles'
 import { sideMenu } from '../assets'
 
@@ -12,7 +12,7 @@ function Movies(props) {
   Navigation.mergeOptions(props.componentId, {
     topBar: {
       title: {
-        text: MOVIES,
+        text: String(props.title).toUpperCase(),
         color: colors.darkBlue,
       },
       leftButtons: {
@@ -24,8 +24,7 @@ function Movies(props) {
   })
 
   return (
-    <View>
-      <Text>{props.title}</Text>
+    <View style={{ backgroundColor: colors.background, flex: 1 }}>
       <MovieList />
     </View>
   )
