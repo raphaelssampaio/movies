@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { View } from 'react-native'
-import { Text } from 'react-native-elements'
 
 import MovieList from '../components/Movies/movieList'
 import { Navigation } from 'react-native-navigation'
@@ -14,6 +13,7 @@ function Movies(props) {
       title: {
         text: String(props.title).toUpperCase(),
         color: colors.darkBlue,
+        fontWeight: 'bold',
       },
       leftButtons: {
         id: SIDE_MENU,
@@ -30,4 +30,4 @@ function Movies(props) {
   )
 }
 
-export default Movies
+export default memo(Movies)
