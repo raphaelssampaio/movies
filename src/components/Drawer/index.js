@@ -13,9 +13,10 @@ import {
   SIXTIES,
   FIFITIES,
 } from '../../constants'
+import { goToMain, goToMovies } from '../../navigation/routes'
 
-export default function Drawer() {
-  function renderButton(title, homeIcon) {
+export default function Drawer(props) {
+  function renderButton(title, home) {
     return (
       <Button
         title={title}
@@ -27,14 +28,26 @@ export default function Drawer() {
           marginTop: 20,
         }}
         icon={{
-          name: homeIcon ? 'home' : 'movie',
+          name: home ? 'home' : 'movie',
           size: 20,
           color: 'white',
           style: { marginTop: 20 },
         }}
         containerStyle={{ alignItems: 'flex-start' }}
+        onPress={() => buttonPress(home, title)}
       />
     )
+  }
+
+  function buttonPress(home, title) {
+    const { isMain, movies } = props
+    if (isMain) {
+      return home ? null : goToMovies(title)
+    }
+    if (movies === title) {
+      return home ? goToMain() : null
+    }
+    return home ? goToMain() : goToMovies(title)
   }
 
   return (

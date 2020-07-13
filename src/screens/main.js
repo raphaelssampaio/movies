@@ -13,7 +13,7 @@ import {
   TWENTY_TEN,
   TWO_THOUSAND,
   ALL_TIME,
-  MOVIES,
+  HOME,
   SIDE_MENU,
 } from '../constants'
 import { openSideMenu } from '../navigation/routes'
@@ -28,7 +28,7 @@ export default class Main extends React.Component {
   static options = {
     topBar: {
       title: {
-        text: MOVIES,
+        text: HOME,
         color: colors.darkBlue,
       },
       leftButtons: {
