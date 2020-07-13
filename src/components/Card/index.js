@@ -5,6 +5,7 @@ import { isIphoneX } from 'react-native-iphone-x-helper'
 
 import { colors } from '../../styles'
 import { SEE_MORE } from '../../constants'
+import { goToMovies } from '../../navigation/routes'
 
 export default function Card({ title, picture }) {
   return (
@@ -16,6 +17,7 @@ export default function Card({ title, picture }) {
           title={SEE_MORE}
           titleStyle={styles.buttonTitleStyle}
           buttonStyle={styles.buttonStyle}
+          onPress={() => goToMovies(title)}
         />
       </View>
     </View>
