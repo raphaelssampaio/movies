@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo, useEffect } from 'react'
 import { View, StyleSheet } from 'react-native'
 import Card from '../components/Card'
 import {
@@ -18,18 +18,15 @@ import {
 } from '../constants'
 import { openSideMenu } from '../navigation/routes'
 import { colors } from '../styles'
+import { Navigation } from 'react-native-navigation'
 
-export default class Main extends React.Component {
-  constructor() {
-    super()
-    openSideMenu()
-  }
-
-  static options = {
+function Main(props) {
+  Navigation.mergeOptions(props.componentId, {
     topBar: {
       title: {
         text: HOME,
         color: colors.darkBlue,
+        fontWeight: 'bold',
       },
       leftButtons: {
         id: SIDE_MENU,
@@ -37,22 +34,24 @@ export default class Main extends React.Component {
         color: colors.darkBlue,
       },
     },
-  }
+  })
 
-  render() {
-    return (
-      <View style={styles.default}>
-        <View style={styles.container}>
-          <Card title={TWENTY_TWENTY} picture={twentyTwenty} />
-          <Card title={TWENTY_TEN} picture={twentyTen} />
-        </View>
-        <View style={styles.container}>
-          <Card title={TWO_THOUSAND} picture={twoThousand} />
-          <Card title={ALL_TIME} picture={allTime} />
-        </View>
+  useEffect(() => {
+    openSideMenu()
+  }, [])
+
+  return (
+    <View style={styles.default}>
+      <View style={styles.container}>
+        <Card title={TWENTY_TWENTY} picture={twentyTwenty} />
+        <Card title={TWENTY_TEN} picture={twentyTen} />
       </View>
-    )
-  }
+      <View style={styles.container}>
+        <Card title={TWO_THOUSAND} picture={twoThousand} />
+        <Card title={ALL_TIME} picture={allTime} />
+      </View>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -74,3 +73,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 })
+
+export default memo(Main)
