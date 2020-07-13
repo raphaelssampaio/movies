@@ -10,4 +10,5 @@ export const SIXTIES = `60's Top 10`
 export const FIFITIES = `50's and less Top 10`
 
 export const MOVIES = 'Movies'
+export const HOME = 'Home'
 export const SIDE_MENU = 'sideMenu'
