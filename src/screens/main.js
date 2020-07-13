@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import { colors } from '../styles'
 import Card from '../components/Card'
 import {
   twentyTwenty,
@@ -17,42 +16,27 @@ import {
   MOVIES,
   SIDE_MENU,
 } from '../constants'
-import { Navigation } from 'react-native-navigation'
-import { MAIN } from '../navigation/constants'
+import { openSideMenu } from '../navigation/routes'
+import { colors } from '../styles'
 
 export default class Main extends React.Component {
+  constructor() {
+    super()
+    openSideMenu()
+  }
+
   static options = {
     topBar: {
       title: {
         text: MOVIES,
-        color: colors.mainBlue,
+        color: colors.darkBlue,
       },
       leftButtons: {
         id: SIDE_MENU,
         icon: sideMenu,
+        color: colors.darkBlue,
       },
     },
-  }
-
-  componentDidMount() {
-    this.navigationEventListener = Navigation.events().bindComponent(this)
-  }
-  componentWillUnmount() {
-    if (this.navigationEventListener) {
-      this.navigationEventListener.remove()
-    }
-  }
-
-  navigationButtonPressed({ buttonId }) {
-    if (buttonId === SIDE_MENU) {
-      Navigation.mergeOptions(MAIN, {
-        sideMenu: {
-          left: {
-            visible: true,
-          },
-        },
-      })
-    }
   }
 
   render() {

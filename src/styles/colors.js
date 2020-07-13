@@ -6,11 +6,11 @@ export default {
   darkBlue: '#13bdd3',
   background: '#2b2a32',
   cardBackground: '#242329',
+  darkerGrey: '#4A4A4A',
 
   lightGrey: '#F3F3F3',
   grey: '#D8D8D8',
   darkGrey: '#9B9B9B',
-  darkerGrey: '#4A4A4A',
   lightBlue: '#3BB3FB',
   blue: '#287FB4',
   lighterRed: '#FFE1DB',
