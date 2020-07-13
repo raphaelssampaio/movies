@@ -1,14 +1,42 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import { colors } from '../styles'
 import Card from '../components/Card'
-
-import { twentyTwenty, twentyTen, twoThousand, allTime } from '../assets'
-import { TWENTY_TWENTY, TWENTY_TEN, TWO_THOUSAND, ALL_TIME } from '../constants'
+import {
+  twentyTwenty,
+  twentyTen,
+  twoThousand,
+  allTime,
+  sideMenu,
+} from '../assets'
+import {
+  TWENTY_TWENTY,
+  TWENTY_TEN,
+  TWO_THOUSAND,
+  ALL_TIME,
+  MOVIES,
+  SIDE_MENU,
+} from '../constants'
+import { openSideMenu } from '../navigation/routes'
+import { colors } from '../styles'
 
 export default class Main extends React.Component {
   constructor() {
     super()
+    openSideMenu()
+  }
+
+  static options = {
+    topBar: {
+      title: {
+        text: MOVIES,
+        color: colors.darkBlue,
+      },
+      leftButtons: {
+        id: SIDE_MENU,
+        icon: sideMenu,
+        color: colors.darkBlue,
+      },
+    },
   }
 
   render() {
