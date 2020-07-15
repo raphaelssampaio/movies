@@ -2,6 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import { ListItem, Button } from 'react-native-elements'
 import { colors } from '../../styles'
+import { goToDetails } from '../../navigation/routes'
 
 export default function MovieCard({ item }) {
   return (
@@ -46,6 +47,7 @@ export default function MovieCard({ item }) {
           buttonStyle={{
             backgroundColor: colors.darkBlue,
           }}
+          onPress={() => goToDetails()}
         />
       </View>
     </>
