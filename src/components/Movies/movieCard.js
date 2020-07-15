@@ -5,6 +5,7 @@ import { colors } from '../../styles'
 import { goToDetails } from '../../navigation/routes'
 
 export default function MovieCard({ item }) {
+  console.log(item)
   return (
     <View
       style={{
@@ -34,7 +35,7 @@ export default function MovieCard({ item }) {
           fontSize: 18,
         }}
         title={item.name}
-        subtitle={item.subtitle}
+        subtitle={'Ranking: ' + item.ranking}
         leftAvatar={{
           source: { uri: item.avatar_url },
           size: 150,
