@@ -1,7 +1,7 @@
 import { Navigation } from 'react-native-navigation'
 
 import { SIDE_MENU } from '../constants'
-import { MAIN, MOVIES, DRAWER } from './constants'
+import { MAIN, MOVIES, DRAWER, DETAILS } from './constants'
 import { colors } from '../styles'
 
 export function goToMain() {
@@ -79,6 +79,13 @@ export function goToMovies(title) {
         },
       },
     },
+  })
+}
+
+export function goToDetails() {
+  const componentId = 'Component13'
+  Navigation.push(componentId, {
+    component: { name: DETAILS },
   })
 }
 
