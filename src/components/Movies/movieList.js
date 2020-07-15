@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState, memo } from 'react'
 import { FlatList } from 'react-native'
 import MovieCard from './movieCard'
+import { getMovies } from '../../api'
 
 function MovieList() {
+  const [movies, setMovies] = useState([])
+
+  useEffect(() => {
+    async function getData() {
+      const response = await getMovies()
+      setMovies(response.data)
+    }
+    getData()
+  }, [])
+
+  useEffect(() => {
+    console.log('Filmes', movies)
+  }, [movies])
+
   const list = [
     {
       name: 'Amy Farha',
@@ -29,4 +44,4 @@ function MovieList() {
   )
 }
 
-export default MovieList
+export default memo(MovieList)
