@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { View } from 'react-native'
+import { ScrollView } from 'react-native'
 
 import MovieDetails from '../components/Movies/movieDetails'
 import { colors, layout } from '../styles'
@@ -21,9 +21,9 @@ function Details(props) {
   })
 
   return (
-    <View style={layout.defaultContainer}>
+    <ScrollView style={layout.detailsContainer}>
       <MovieDetails movie={props.movie} />
-    </View>
+    </ScrollView>
   )
 }
 

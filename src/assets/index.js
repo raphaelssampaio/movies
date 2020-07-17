@@ -1,5 +1,5 @@
 export { default as allTime } from './allTime.jpeg'
 export { default as twoThousand } from './doisMil.jpg'
 export { default as twentyTen } from './doisMileDez.jpg'
-export { default as twentyTwenty } from './doisMileVinte.jpg'
+export { default as nineties } from './anosNoventa.jpg'
 export { default as sideMenu } from './sideMenu.png'

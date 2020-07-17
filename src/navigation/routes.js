@@ -41,7 +41,7 @@ export function goToMain() {
   })
 }
 
-export function goToMovies(title) {
+export function goToMovies(title, startAt, endAt, allTime) {
   Navigation.setRoot({
     root: {
       sideMenu: {
@@ -51,6 +51,9 @@ export function goToMovies(title) {
             passProps: {
               isMain: false,
               movies: title,
+              startAt,
+              endAt,
+              allTime,
             },
           },
         },
@@ -62,6 +65,9 @@ export function goToMovies(title) {
                   name: MOVIES,
                   passProps: {
                     title: title,
+                    startAt,
+                    endAt,
+                    allTime,
                   },
                 },
               },
