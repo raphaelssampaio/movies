@@ -18,7 +18,7 @@ export default function MovieDetails({ movie }) {
           />
         </View>
         <View style={{ marginVertical: 20 }}>
-          <Text style={{ marginBottom: 20, ...styles.data }}>Movie data</Text>
+          <Text style={{ ...styles.data, marginBottom: 20 }}>Movie data</Text>
           <Text style={styles.data}>Rating: {movie.rating}</Text>
           <Text style={styles.data}>Ranking: {movie.ranking}</Text>
           <Text style={styles.data}>Year: {movie.year}</Text>
@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
   data: {
     color: colors.white,
     paddingHorizontal: 15,
+    marginBottom: 5,
     lineHeight: 20,
     fontSize: 18,
   },
