@@ -23,13 +23,7 @@ export function getMovieYear({ data }, startAt, endAt, allTime) {
       ) {
         yearList.push(movie)
       }
-      if (endAt === 2020) {
-        if (String(movie.year).valueOf() === 2020) {
-          yearList.push(movie)
-        }
-      }
-    } else {
-      if (String(movie.year).valueOf() < 1950) {
+      if (String(movie.year).valueOf() <= 1959) {
         yearList.push(movie)
       }
     }
@@ -46,7 +40,7 @@ export function getDrawerYear(title) {
     "80's Top 10": { startAt: 1980, endAt: 1989 },
     "70's Top 10": { startAt: 1970, endAt: 1979 },
     "60's Top 10": { startAt: 1960, endAt: 1969 },
-    "50's and less Top 10": { endAt: 1950 },
+    "50's and less Top 10": { endAt: 1959 },
   }
 
   return year[title] || { allTime: true }
