@@ -25,7 +25,7 @@ function Movies(props) {
 
   return (
     <View style={{ backgroundColor: colors.background, flex: 1 }}>
-      <MovieList />
+      <MovieList componentId={props.componentId} />
     </View>
   )
 }
