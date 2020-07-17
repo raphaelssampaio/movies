@@ -63,4 +63,9 @@ export default StyleSheet.create({
   defaultMarginVertical: { marginVertical: 20 },
   defaultMarginBottom: { marginBottom: 20 },
   defaultMarginTop: { marginTop: 20 },
+  detailsContainer: {
+    flex: 1,
+    backgroundColor: colors.background,
+    paddingBottom: 20,
+  },
 })

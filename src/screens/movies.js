@@ -25,7 +25,12 @@ function Movies(props) {
 
   return (
     <View style={layout.defaultContainer}>
-      <MovieList componentId={props.componentId} />
+      <MovieList
+        componentId={props.componentId}
+        startAt={props.startAt}
+        endAt={props.endAt}
+        allTime={props.allTime}
+      />
     </View>
   )
 }

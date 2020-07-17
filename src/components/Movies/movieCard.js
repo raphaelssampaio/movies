@@ -3,6 +3,7 @@ import { View } from 'react-native'
 import { ListItem, Button } from 'react-native-elements'
 import { layout, typography } from '../../styles'
 import { goToDetails } from '../../navigation/routes'
+import { SEE_DETAILS, SIMPLE_PLOT } from '../../constants'
 
 export default function MovieCard({ item }, props) {
   return (
@@ -12,7 +13,7 @@ export default function MovieCard({ item }, props) {
         titleStyle={typography.defaultTitle}
         subtitleStyle={typography.defaultSubtitle}
         title={item.title}
-        subtitle={'Ranking: ' + item.ranking}
+        subtitle={`${SIMPLE_PLOT}: ${item.simplePlot}`}
         leftAvatar={{
           source: { uri: item.urlPoster },
           imageProps: { resizeMode: 'contain' },
@@ -21,7 +22,7 @@ export default function MovieCard({ item }, props) {
         }}
       />
       <Button
-        title={'SEE DETAILS'}
+        title={SEE_DETAILS}
         buttonStyle={layout.secondBgColor}
         onPress={() => goToDetails(item, props)}
       />

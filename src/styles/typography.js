@@ -2,6 +2,8 @@ import colors from './colors'
 
 export const alignStart = { alignSelf: 'flex-start' }
 
+export const bold = { fontWeight: 'bold' }
+
 export const defaultTitle = {
   ...alignStart,
   fontWeight: 'bold',
@@ -33,11 +35,6 @@ export const movieText = {
   marginBottom: 5,
   lineHeight: 20,
   fontSize: 18,
-}
-
-export const movieDetailsText = {
-  ...movieText,
-  marginBottom: 20,
 }
 
 export const movieTitle = {

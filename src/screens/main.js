@@ -1,20 +1,14 @@
 import React, { memo, useEffect } from 'react'
 import { View } from 'react-native'
 import Card from '../components/Card'
+import { twentyTen, twoThousand, nineties, allTime, sideMenu } from '../assets'
 import {
-  twentyTwenty,
-  twentyTen,
-  twoThousand,
-  allTime,
-  sideMenu,
-} from '../assets'
-import {
-  TWENTY_TWENTY,
   TWENTY_TEN,
   TWO_THOUSAND,
   ALL_TIME,
   HOME,
   SIDE_MENU,
+  NINETIES,
 } from '../constants'
 import { openSideMenu } from '../navigation/routes'
 import { colors, layout } from '../styles'
@@ -43,12 +37,22 @@ function Main(props) {
   return (
     <View style={[layout.defaultContainer, layout.mainDefault]}>
       <View style={[layout.defaultContainer, layout.mainContainer]}>
-        <Card title={TWENTY_TWENTY} picture={twentyTwenty} />
-        <Card title={TWENTY_TEN} picture={twentyTen} />
+        <Card
+          title={TWENTY_TEN}
+          picture={twentyTen}
+          startAt={2010}
+          endAt={2019}
+        />
+        <Card
+          title={TWO_THOUSAND}
+          picture={twoThousand}
+          startAt={2000}
+          endAt={2009}
+        />
       </View>
       <View style={[layout.defaultContainer, layout.mainContainer]}>
-        <Card title={TWO_THOUSAND} picture={twoThousand} />
-        <Card title={ALL_TIME} picture={allTime} />
+        <Card title={NINETIES} picture={nineties} startAt={1990} endAt={1999} />
+        <Card title={ALL_TIME} picture={allTime} allTime />
       </View>
     </View>
   )
