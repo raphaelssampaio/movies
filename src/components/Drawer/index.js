@@ -1,7 +1,7 @@
 import React from 'react'
 import { SafeAreaView } from 'react-native'
 import { Button } from 'react-native-elements'
-import { colors } from '../../styles'
+import { layout, typography, colors } from '../../styles'
 import {
   ALL_TIME,
   TWENTY_TWENTY,
@@ -12,6 +12,7 @@ import {
   SEVENTIES,
   SIXTIES,
   FIFITIES,
+  HOME,
 } from '../../constants'
 import { goToMain, goToMovies } from '../../navigation/routes'
 
@@ -21,19 +22,14 @@ export default function Drawer(props) {
       <Button
         title={title}
         type="clear"
-        titleStyle={{
-          fontWeight: 'bold',
-          color: colors.white,
-          marginLeft: 10,
-          marginTop: 20,
-        }}
+        titleStyle={typography.drawerButtonTitle}
         icon={{
           name: home ? 'home' : 'movie',
           size: 20,
-          color: 'white',
-          style: { marginTop: 20 },
+          color: colors.white,
+          style: layout.defaultMarginTop,
         }}
-        containerStyle={{ alignItems: 'flex-start' }}
+        containerStyle={layout.drawerButton}
         onPress={() => buttonPress(home, title)}
       />
     )
@@ -51,8 +47,8 @@ export default function Drawer(props) {
   }
 
   return (
-    <SafeAreaView style={{ backgroundColor: colors.darkerGrey, flex: 1 }}>
-      {renderButton('Home', true)}
+    <SafeAreaView style={layout.drawerContainer}>
+      {renderButton(HOME, true)}
       {renderButton(ALL_TIME)}
       {renderButton(TWENTY_TWENTY)}
       {renderButton(TWENTY_TEN)}

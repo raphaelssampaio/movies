@@ -4,7 +4,7 @@ import { View } from 'react-native'
 import MovieList from '../components/Movies/movieList'
 import { Navigation } from 'react-native-navigation'
 import { SIDE_MENU } from '../constants'
-import { colors } from '../styles'
+import { colors, layout } from '../styles'
 import { sideMenu } from '../assets'
 
 function Movies(props) {
@@ -24,7 +24,7 @@ function Movies(props) {
   })
 
   return (
-    <View style={{ backgroundColor: colors.background, flex: 1 }}>
+    <View style={layout.defaultContainer}>
       <MovieList componentId={props.componentId} />
     </View>
   )
