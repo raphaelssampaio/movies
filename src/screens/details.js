@@ -2,31 +2,26 @@ import React, { memo } from 'react'
 import { View } from 'react-native'
 
 import MovieDetails from '../components/Movies/movieDetails'
-import { colors } from '../styles'
+import { colors, layout } from '../styles'
 import { Navigation } from 'react-native-navigation'
-import { DETAILS } from '../navigation/constants'
+import { DETAILS, BACK } from '../navigation/constants'
 
 function Details(props) {
   Navigation.mergeOptions(props.componentId, {
     topBar: {
       title: {
-        text: DETAILS,
+        text: `Movie ${DETAILS}`.toUpperCase(),
         color: colors.darkBlue,
         fontWeight: 'bold',
       },
       backButton: {
-        title: 'Back',
+        title: BACK,
       },
     },
   })
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: colors.background,
-      }}
-    >
+    <View style={layout.defaultContainer}>
       <MovieDetails movie={props.movie} />
     </View>
   )
