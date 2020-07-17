@@ -1,5 +1,5 @@
 import React, { memo, useEffect } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View } from 'react-native'
 import Card from '../components/Card'
 import {
   twentyTwenty,
@@ -17,7 +17,7 @@ import {
   SIDE_MENU,
 } from '../constants'
 import { openSideMenu } from '../navigation/routes'
-import { colors } from '../styles'
+import { colors, layout } from '../styles'
 import { Navigation } from 'react-native-navigation'
 
 function Main(props) {
@@ -41,37 +41,17 @@ function Main(props) {
   }, [])
 
   return (
-    <View style={styles.default}>
-      <View style={styles.container}>
+    <View style={[layout.defaultContainer, layout.mainDefault]}>
+      <View style={[layout.defaultContainer, layout.mainContainer]}>
         <Card title={TWENTY_TWENTY} picture={twentyTwenty} />
         <Card title={TWENTY_TEN} picture={twentyTen} />
       </View>
-      <View style={styles.container}>
+      <View style={[layout.defaultContainer, layout.mainContainer]}>
         <Card title={TWO_THOUSAND} picture={twoThousand} />
         <Card title={ALL_TIME} picture={allTime} />
       </View>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  default: {
-    flex: 1,
-    backgroundColor: colors.background,
-    paddingTop: 64,
-    paddingHorizontal: 16,
-  },
-  welcome: {
-    fontSize: 28,
-    color: colors.white,
-  },
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: colors.background,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-})
 
 export default memo(Main)
