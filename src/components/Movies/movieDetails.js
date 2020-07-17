@@ -4,23 +4,44 @@ import { Image, Text } from 'react-native-elements'
 
 import { colors } from '../../styles'
 
-export default function MovieDetails({ data }) {
+export default function MovieDetails({ movie }) {
   return (
-    <View>
-      <Text style={styles.titleStyle}>Movie: {data.title}</Text>
-      <Text style={styles.description}>Description: {data.description}</Text>
-      <View style={{ alignItems: 'center' }}>
-        <Image
-          style={styles.photo}
-          resizeMode="cover"
-          source={{ uri: data.picture }}
-        />
+    <View style={styles.shadow}>
+      <View style={styles.container}>
+        <Text style={styles.titleStyle}>Movie: {movie.title}</Text>
+
+        <View style={{ alignItems: 'center' }}>
+          <Image
+            style={styles.photo}
+            resizeMode="contain"
+            source={{ uri: movie.urlPoster }}
+          />
+        </View>
+        <View style={{ marginVertical: 20 }}>
+          <Text style={{ ...styles.data, marginBottom: 20 }}>Movie data</Text>
+          <Text style={styles.data}>Rating: {movie.rating}</Text>
+          <Text style={styles.data}>Ranking: {movie.ranking}</Text>
+          <Text style={styles.data}>Year: {movie.year}</Text>
+        </View>
       </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+  shadow: {
+    marginTop: 20,
+    shadowOffset: { width: 1, height: 1 },
+    shadowColor: colors.mainBlue,
+    shadowOpacity: 1,
+    elevation: 1,
+    backgroundColor: colors.transparent,
+    marginHorizontal: 5,
+  },
+  container: {
+    borderRadius: 20,
+    backgroundColor: colors.cardBackground,
+  },
   titleStyle: {
     fontWeight: 'bold',
     color: colors.white,
@@ -34,9 +55,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 5,
   },
-  description: {
+  data: {
     color: colors.white,
-    padding: 15,
+    paddingHorizontal: 15,
+    marginBottom: 5,
+    lineHeight: 20,
     fontSize: 18,
   },
 })

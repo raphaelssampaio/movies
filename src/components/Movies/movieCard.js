@@ -4,7 +4,7 @@ import { ListItem, Button } from 'react-native-elements'
 import { colors } from '../../styles'
 import { goToDetails } from '../../navigation/routes'
 
-export default function MovieCard({ item }) {
+export default function MovieCard({ item }, props) {
   return (
     <View
       style={{
@@ -33,10 +33,11 @@ export default function MovieCard({ item }) {
           padding: 15,
           fontSize: 18,
         }}
-        title={item.name}
-        subtitle={item.subtitle}
+        title={item.title}
+        subtitle={'Ranking: ' + item.ranking}
         leftAvatar={{
-          source: { uri: item.avatar_url },
+          source: { uri: item.urlPoster },
+          imageProps: { resizeMode: 'contain' },
           size: 150,
           rounded: false,
         }}
@@ -46,7 +47,7 @@ export default function MovieCard({ item }) {
         buttonStyle={{
           backgroundColor: colors.darkBlue,
         }}
-        onPress={() => goToDetails()}
+        onPress={() => goToDetails(item, props)}
       />
     </View>
   )

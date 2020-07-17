@@ -82,10 +82,9 @@ export function goToMovies(title) {
   })
 }
 
-export function goToDetails() {
-  const componentId = 'Component13'
-  Navigation.push(componentId, {
-    component: { name: DETAILS },
+export function goToDetails(movie, screen) {
+  Navigation.push(screen.componentId, {
+    component: { name: DETAILS, passProps: { movie } },
   })
 }
 
