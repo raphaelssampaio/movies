@@ -9,11 +9,10 @@ export async function getMovies(startAt, endAt, allTime) {
 
   const response = await axios.get(BASE_URL)
 
-  if (allTime === undefined) {
+  if (!allTime) {
     movies = getMovieYear(response.data, startAt, endAt, false)
-  } else {
-    movies = getMovieYear(response.data, null, null, true)
-  }
-
+    return movies
+  } 
+  movies = getMovieYear(response.data, null, null, true)
   return movies
 }
